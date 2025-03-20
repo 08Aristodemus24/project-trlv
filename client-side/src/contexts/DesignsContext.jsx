@@ -15,12 +15,14 @@ export const DesignsProvider = ({ children }) => {
                     '--secondary-color': "black",
                     '--tertiary-color': "rgba(255, 255, 255, 0.267)",
                     '--primary-background': "black",
+                    '--secondary-background': "white",
                 },
                 light: {
                     '--primary-color': "black",
                     '--secondary-color': "white",
                     '--tertiary-color': "rgba(0, 0, 0, 0.267)",
                     '--primary-background': "white",
+                    '--secondary-background': "black",
                 }
             },
             'light-neomorphic': {

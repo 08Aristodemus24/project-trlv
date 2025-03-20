@@ -912,8 +912,8 @@ div[class*="name-container"].dark-neomorphic{
   border-left: none;
   border-bottom: 1px solid var(--primary-color);
 
+  /* size */
   width: 12rem;
-  /* width: 30rem; */
 
   /* display */
   display: block;
@@ -2024,4 +2024,204 @@ div[class*="name-container"].dark-neomorphic{
   font-weight: 300;
   background-color: white;
   /* outline: 1px solid; */
+}
+
+
+
+/* LANDING SECTION */
+#landing-section{
+  /* size for each section*/
+  /* take into account navbar in data-form section */
+  /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
+  min-height: 100vh;
+
+  /* position */
+  position: relative;
+
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  background-color: var(--primary-background);
+  border: 2px solid lightseagreen;
+}
+
+.landing-content{
+  /* alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  /* outline: 3px solid purple; */
+}
+
+.landing-content h1{
+  /* design */
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: var(--primary-color);
+}
+
+/* LANDING SECTION */
+#landing-section{
+  /* size for each section*/
+  /* take into account navbar in data-form section */
+  /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
+  min-height: 100vh;
+
+  /* position */
+  position: relative;
+
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  background-color: var(--primary-background);
+  border: 2px solid lightseagreen;
+}
+
+.landing-content{
+  /* alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  /* outline: 3px solid purple; */
+}
+
+.landing-content h1{
+  /* design */
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+
+
+/* ABOUT SECTION */
+#about-section,
+#store-section,
+#joinus-section,
+#faq-section,
+#contact-section{
+  /* size for each section*/
+  /* take into account navbar in data-form section */
+  /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
+  min-height: 100vh;
+
+  /* position */
+  position: relative;
+
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  background-color: var(--primary-background);
+  border: 2px solid lightseagreen;
+}
+
+.about-content,
+.store-content,
+.joinus-content,
+.faq-content,
+.contact-content{
+  /* alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* design */
+  /* outline: 3px solid purple; */
+}
+
+.about-content h1,
+.store-content h1,
+.joinus-content h1,
+.faq-content h1,
+.contact-content h1{
+  /* design */
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 100;
+  color: var(--primary-color);
+}
+
+
+
+/* FOOTER */
+.footer-container{
+  /* size */
+  width: 100%;
+
+  /* design */
+  /* outline: 1px solid gainsboro; */
+}
+
+.footer-content{
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* spacing */
+
+}
+
+.wrapper{
+  /* size */
+  /* height: clamp(4rem, 6.5vw, 6.5rem); */
+  flex-grow: 1;
+
+  /* design */
+  border: 3px solid green;
+
+  /* spacing */
+  margin-block: 1rem;
+
+  /* display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+}
+
+.footer-credits{
+  /* design */
+  color: var(--primary-color);
+  text-align: center;
+  font-size: clamp(10px, 1vw, 1rem);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  /* outline: 1px solid steelblue; */
+
+  /* size */
+  padding-inline: 1em;
+  width: fit-content;
+}
+
+.footer-end{
+  /* design */
+  color: var(--primary-color);
+  text-align: center;
+  font-size: clamp(10px, 1vw, 1rem);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  /* outline: 1px solid steelblue; */
+
+  /* size */
+  width: fit-content;
 }
