@@ -38,9 +38,6 @@
 
     /* design */
     mix-blend-mode: difference;
-
-    /* transition */
-    transition: top 0.25s cubic-bezier(0.5, 0, 0, 1);
   }
 
   .navbar-container.shown{
@@ -116,7 +113,7 @@
 
   .navbar-brand svg{
     /* outline: 1px solid red; */
-    fill: white;
+    fill: var(--secondary-color);
 
     /* size */
     width: clamp(20px, 3.125vw, 30px);
@@ -132,12 +129,12 @@
     position: relative;
 
     /* size */
-    height: 1.75rem;
-    width: 1.75rem;
+    height: 1rem;
+    width: 2rem;
 
     /* design */
-    color: var(--primary-color);
-    background: var(--primary-background);
+    /* color: var(--primary-color);
+    background: var(--primary-background); */
     /* outline: 1px solid lightgreen; */
   }
 
@@ -152,7 +149,6 @@
     z-index: 2;
 
     /* design */
-    background-color: white;
     /* outline: 5px solid red; */
 
     /* alignment */
@@ -240,116 +236,78 @@
 
     /* position */
     position: absolute;
+    inset-block: 0;
+    margin: auto;
 
     /* sizing */
-    height: 5px;
-    width: 5px;
+    height: 2px;
+    width: 75%;
 
     /* design */
-    border-radius: 50%;
-    background-color: red;
+    background-color: var(--secondary-color);
     /* outline: 1px solid red; */
   }
 
-  .top-left-corner{
-    top: 1px;
-    left: 1px;
+  .button-container::before,
+  .button-container::after{
+    /* display */
+    display: block;
+
+    /* size */
+    height: 2px;
+    
+    /* position */
+    position: absolute;
+
+    /* design */
+    content: '';
+    background-color: var(--secondary-color);
   }
 
-  .top-edge{
-    top: 1px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-    /* animation */
-    transition-property: transform;
-    transition-duration: 125ms;
-    transition-timing-function: ease-in-out;
-  }
-
-  .top-right-corner{
-    top: 1px;
-    right: 1px;
-  }
-
-  .left-edge{
-    left: 1px;
+  .button-container::before{
+    /* position */
     top: 0;
+
+    /* size */
+    width: 100%;
+
+    transition: 
+      top 0.25s ease-in-out,
+      transform 0.25s ease-in-out;
+  }
+
+  .button-container::after{
+    /* position */
     bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
 
-    /* animation */
-    transition-property: transform;
-    transition-duration: 125ms;
-    transition-timing-function: ease-in-out;
+    /* size */
+    width: 50%;
+
+    transition: 
+      bottom 0.25s ease-in-out,
+      transform 0.25s ease-in-out;
   }
 
-  .center{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto auto auto auto;
+  .button-container.opened::before{
+    /* position */
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* design */
+    background-color: var(--primary-color);
   }
 
-  .right-edge{
-    right: 1px;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
+  .button-container.opened::after{
+    /* design */
+    background-color: var(--primary-color);
 
-    /* animation */
-    transition-property: transform;
-    transition-duration: 125ms;
-    transition-timing-function: ease-in-out;
-  }
-
-  .bottom-left-corner{
-    left: 1px;
-    bottom: 1px;
-  }
-
-  .bottom-edge{
-    bottom: 1px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-    /* animation */
-    transition-property: transform;
-    transition-duration: 125ms;
-    transition-timing-function: ease-in-out;
-  }
-
-  .bottom-right-corner{
-    right: 1px;
-    bottom: 1px;
+    /* position */
+    bottom: 50%;
+    transform: translateY(50%);
   }
 
   .button-container.opened > a{
-    background-color: black;
-  }
-
-  /* on hover on button-container then translate top, left, bottom, right edges to */
-  .button-container.opened .top-edge{
-    transform: translate(-105%, 105%);
-  }
-
-  .button-container.opened .left-edge{
-    transform: translate(105%, 105%);
-  }
-
-  .button-container.opened .bottom-edge{
-    transform: translate(105%, -105%);
-  }
-
-  .button-container.opened .right-edge{
-    transform: translate(-105%, -105%);
+    background-color: var(--primary-color);
   }
 
   .navbar-container.opened{
@@ -361,6 +319,8 @@
   }
 
   .navbar-container.opened .nav-menu-container{
+    /* design */
+    background-color: var(--primary-background);
     visibility: visible;
     opacity: 100%;
   }

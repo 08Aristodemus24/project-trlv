@@ -2045,46 +2045,7 @@ div[class*="name-container"].dark-neomorphic{
 
   /* design */
   background-color: var(--primary-background);
-  border: 2px solid lightseagreen;
-}
-
-.landing-content{
-  /* alignment */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* design */
-  /* outline: 3px solid purple; */
-}
-
-.landing-content h1{
-  /* design */
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 300;
-  letter-spacing: 5px;
-  color: var(--primary-color);
-}
-
-/* LANDING SECTION */
-#landing-section{
-  /* size for each section*/
-  /* take into account navbar in data-form section */
-  /* min-height: calc(100vh - clamp(3.5rem, 6.5vw, 6.5rem)); */
-  min-height: 100vh;
-
-  /* position */
-  position: relative;
-
-  /* display */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* design */
-  background-color: var(--primary-background);
-  border: 2px solid lightseagreen;
+  /* border: 2px solid lightseagreen; */
 }
 
 .landing-content{
@@ -2130,7 +2091,7 @@ div[class*="name-container"].dark-neomorphic{
 
   /* design */
   background-color: var(--primary-background);
-  border: 2px solid lightseagreen;
+  /* border: 2px solid lightseagreen; */
 }
 
 .about-content,
@@ -2186,7 +2147,7 @@ div[class*="name-container"].dark-neomorphic{
   flex-grow: 1;
 
   /* design */
-  border: 3px solid green;
+  /* border: 3px solid green; */
 
   /* spacing */
   margin-block: 1rem;

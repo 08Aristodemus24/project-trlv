@@ -4,7 +4,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 
 
-export default function Footer({ children }){
+export default function Footer(){
   // initialize and define theme of component by using
   // context
   let style;
