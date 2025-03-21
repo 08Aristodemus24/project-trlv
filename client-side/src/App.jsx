@@ -1,4 +1,3 @@
-"use client"
 import { ThemeContext } from './contexts/ThemeContext';
 import { DesignsProvider } from './contexts/DesignsContext';
 
@@ -17,7 +16,7 @@ import './navbar-862-and-up.css';
 import './navbar-862-down.css';
 
 
-function App() {
+function App(){
 
   return (
     <DesignsProvider>
