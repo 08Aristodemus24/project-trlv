@@ -37,7 +37,7 @@
     z-index: 10;
 
     /* design */
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
   }
 
   .navbar-container.shown{
@@ -111,13 +111,12 @@
     transition-timing-function: ease-in-out;
   }
 
-  .navbar-brand svg{
+  .navbar-brand img{
     /* outline: 1px solid red; */
-    fill: var(--secondary-color);
 
     /* size */
-    width: clamp(20px, 3.125vw, 30px);
-    height: clamp(20px, 3.125vw, 30px);
+    width: clamp(50px, 3.125vw, 70px);
+    height: clamp(58px, 3.125vw, 78px);
 }
 
   /* for the navbar button and its animations */
@@ -131,16 +130,12 @@
     /* size */
     height: 1rem;
     width: 2rem;
-
-    /* design */
-    /* color: var(--primary-color);
-    background: var(--primary-background); */
-    /* outline: 1px solid lightgreen; */
   }
 
   .nav-menu-container{
     /* display */
     display: flex;
+    flex-direction: column;
     visibility: hidden;
     opacity: 0%;
 
@@ -149,7 +144,7 @@
     z-index: 2;
 
     /* design */
-    /* outline: 5px solid red; */
+    outline: 5px solid red;
 
     /* alignment */
     top: 0;
@@ -167,8 +162,16 @@
       visibility 0.25s ease-in-out;
   }
 
+  /* nav-menu styles are initially set before its 
+  visibility is hidden and opacity set to 0 */
   .nav-menu{
+    /* display */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: clamp(2.5rem, 7.42vw, 4rem);
+
+    /* design */
     /* border: 1px solid blue; */
   }
 
@@ -187,8 +190,8 @@
 
     /* design */
     text-align: center;
-    color: black;
-    font-size: 13px;
+    color: var(--primary-color);
+    font-size: clamp(12px, 1vw, 1rem);
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     text-decoration: none;
@@ -229,6 +232,55 @@
     border-bottom: solid 1px black;
   }
 
+  .nav-signup{
+    /* override position */
+    position: relative;
+    right: auto;
+    margin-top: clamp(2.5rem, 7.42vw, 4rem);;
+
+    /* display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: clamp(2.5rem, 7.42vw, 4rem);
+
+    /* design */
+    /* outline: 1px solid blueviolet; */
+  }
+
+  .signup-item{
+    /* design */
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(12px, 1vw, 1rem);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+    outline: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--primary-background);
+
+    /* display */
+    display: block;
+
+    /* spacing */
+    margin-inline: clamp(0.25rem, 0.55vw, 0.5rem);
+    padding-block: .5em;
+    padding-inline: 1.5em;
+
+    /* size */
+    width: clamp(5rem, 7.5vw, 7.5rem);
+
+    transition:
+        background-color 0.5s ease-in-out,
+        color 0.5s ease-in-out;
+  }
+
+  .signup-item:hover{
+    background-color: var(--secondary-background);
+    color: var(--secondary-color);
+  }
+
   /* MOBILE */
   .button-container > a{
     /* display */
@@ -244,7 +296,7 @@
     width: 75%;
 
     /* design */
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     /* outline: 1px solid red; */
   }
 
@@ -261,7 +313,7 @@
 
     /* design */
     content: '';
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
   }
 
   .button-container::before{
@@ -323,13 +375,5 @@
     background-color: var(--primary-background);
     visibility: visible;
     opacity: 100%;
-  }
-
-  /* nav-menu styles are initially set before its 
-  visibility is hidden and opacity set to 0 */
-  .navbar .nav-menu-container .nav-menu{
-    flex-direction: column;
-    justify-content: center;
-    row-gap: clamp(2.5rem, 7.42vw, 4rem);
-  }
+  }  
 }
