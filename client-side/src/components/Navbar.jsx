@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { DesignsContext } from "../contexts/DesignsContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import trlv_logo from "../assets/mediafiles/trlv.svg";
+import { Navigate, NavLink } from "react-router-dom";
 
 
 export default function Navbar(){
@@ -81,8 +82,8 @@ export default function Navbar(){
             </div>
 
             <div className="nav-signup">
-              <a className="signup-item login">Login</a>
-              <a className="signup-item signup">Sign Up</a>
+              <NavLink className="signup-item login" to="/login">Login</NavLink>
+              <NavLink className="signup-item signup" to="/signup">Sign Up</NavLink>
             </div>
           </div>
         </nav>
