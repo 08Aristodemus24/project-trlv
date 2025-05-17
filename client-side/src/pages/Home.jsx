@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar';
 import Landing from '../components/Landing';
 import About from '../components/About';
 import Store from '../components/Store';
@@ -10,7 +9,6 @@ import Footer from '../components/Footer';
 export default function Home(){
     return (
         <>
-            <Navbar/>
             <Landing/>
             <About/>
             <Store/>

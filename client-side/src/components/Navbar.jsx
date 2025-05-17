@@ -60,12 +60,11 @@ export default function Navbar(){
     <header className={`navbar-container ${isOpened === true ? "opened" : ""} ${design}`} style={style}>
         <nav className="navbar">
           <div className="nav-brand-container">
-            <a className="navbar-brand" href="/" onClick={(event) => {
-              event.preventDefault();
+            <NavLink className="navbar-brand" to="/" onClick={(event) => {
               document.body.scrollIntoView();
             }}>
               <img src={trlv_logo}/>
-            </a>
+            </NavLink>
             
             <div onClick={toggle_menu} className={`button-container ${isOpened === true ? "opened" : ""}`}>
                 <a href="#" className="middle-line"></a>
@@ -82,7 +81,7 @@ export default function Navbar(){
             </div>
 
             <div className="nav-signup">
-              <NavLink className="signup-item login" to="/login">Login</NavLink>
+              <NavLink className="signup-item login" to="/login" >Login</NavLink>
               <NavLink className="signup-item signup" to="/signup">Sign Up</NavLink>
             </div>
           </div>
