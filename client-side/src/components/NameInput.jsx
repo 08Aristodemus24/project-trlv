@@ -8,8 +8,8 @@ export default function NameInput({ 'name-type': name_type, children }){
     // This is to reduce redundancy of using virtually the
     // same component but different in name code like first 
     // and last name. 
-    let name_code = name_type === 'first' ? 'f' : 'l';
-    let placeholder = name_type === 'first' ? 'John Smith' : 'Meyer';
+    let name_code = name_type === 'user' ? 'u' : name_type === 'first' ? 'l' : 'f';
+    let placeholder = name_type === 'user' ? 'CookieMonster1056' : name_type === 'first' ? 'John Smith' : 'Meyer';
     const capitalize = (string) => string[0].toUpperCase() + string.substring(1);
 
     // series of logic are to decide what proper state and state setter
@@ -18,7 +18,12 @@ export default function NameInput({ 'name-type': name_type, children }){
     // contain the fname or lname states and their state setters
     let field_value;
     let setter;
-    if(name_type === 'first'){
+    if(name_type === 'user'){
+        let { uname, setUname } = useContext(FormInputsContext);
+        field_value = uname;
+        setter = setUname;
+    }
+    else if(name_type === 'first'){
         let { fname, setFname } = useContext(FormInputsContext);
         field_value = fname;
         setter = setFname;

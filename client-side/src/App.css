@@ -416,7 +416,8 @@ div[class*="name-container"].dark-neomorphic{
   color: var(--tertiary-color);                
 }
 
-.sharp-minimal .country-code-label{
+.sharp-minimal .country-code-label,
+.sharp-minimal .member-role-label{
   /* design */
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
@@ -430,7 +431,8 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.sharp-minimal .country-code-field{
+.sharp-minimal .country-code-field,
+.sharp-minimal .member-role-field{
   /* design */
   background-color: transparent;
   color: var(--primary-color);
@@ -449,7 +451,8 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.sharp-minimal .country-code-field option{
+.sharp-minimal .country-code-field option,
+.sharp-minimal .member-role-field option{
   /* design */
   background-color: rgba(255, 0, 0, 0);
   color: black;
@@ -713,7 +716,8 @@ div[class*="name-container"].dark-neomorphic{
   color: var(--tertiary-color);                
 }
 
-.sharp-minimal .message-label{
+.sharp-minimal .message-label,
+.sharp-minimal .bio-label{
   /* design */
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
@@ -727,7 +731,8 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.sharp-minimal .message-field{
+.sharp-minimal .message-field,
+.sharp-minimal .bio-field{
   /* design */
   background-color: transparent;
   color: var(--primary-color);
@@ -749,20 +754,24 @@ div[class*="name-container"].dark-neomorphic{
   resize: none;
 }
 
-.sharp-minimal .message-field::placeholder{
+.sharp-minimal .message-field::placeholder,
+.sharp-minimal .bio-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1;            
 }
 
-.sharp-minimal .message-field:-ms-input-placeholder{
+.sharp-minimal .message-field:-ms-input-placeholder,
+.sharp-minimal .bio-field:-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.sharp-minimal .message-field::-ms-input-placeholder{
+.sharp-minimal .message-field::-ms-input-placeholder,
+.sharp-minimal .bio-field::-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.light-neomorphic.message-container{
+.light-neomorphic.message-container,
+.light-neomorphic.bio-container{
   /* design */
   background-color: var(--secondary-color);
 
@@ -770,7 +779,8 @@ div[class*="name-container"].dark-neomorphic{
   padding: 1em;
 }
 
-.light-neomorphic .message-label{
+.light-neomorphic .message-label,
+.light-neomorphic .bio-label{
   /* design */
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -786,7 +796,8 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.light-neomorphic .message-field{
+.light-neomorphic .message-field,
+.light-neomorphic .bio-field{
   /* design */
   color: var(--primary-color);
   background-color: var(--secondary-color);
@@ -811,20 +822,24 @@ div[class*="name-container"].dark-neomorphic{
   resize: none;
 }
 
-.light-neomorphic .message-field::placeholder{
+.light-neomorphic .message-field::placeholder,
+.light-neomorphic .bio-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1;            
 }
 
-.light-neomorphic .message-field:-ms-input-placeholder{
+.light-neomorphic .message-field:-ms-input-placeholder,
+.light-neomorphic .bio-field:-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.light-neomorphic .message-field::-ms-input-placeholder{
+.light-neomorphic .message-field::-ms-input-placeholder,
+.light-neomorphic .bio-field::-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.dark-neomorphic.message-container{
+.dark-neomorphic.message-container,
+.dark-neomorphic.bio-container{
   /* design */
   background-color: var(--secondary-color);
 
@@ -832,7 +847,8 @@ div[class*="name-container"].dark-neomorphic{
   padding: 1em;
 }
 
-.dark-neomorphic .message-label{
+.dark-neomorphic .message-label,
+.dark-neomorphic .bio-label{
   /* design */
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -848,7 +864,8 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.dark-neomorphic .message-field{
+.dark-neomorphic .message-field,
+.dark-neomorphic .bio-field{
   /* design */
   color: var(--primary-color);
   background-color: var(--secondary-color);
@@ -873,16 +890,19 @@ div[class*="name-container"].dark-neomorphic{
   resize: none;
 }
 
-.dark-neomorphic .message-field::placeholder{
+.dark-neomorphic .message-field::placeholder,
+.dark-neomorphic .bio-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1;            
 }
 
-.dark-neomorphic .message-field:-ms-input-placeholder{
+.dark-neomorphic .message-field:-ms-input-placeholder,
+.dark-neomorphic .bio-field:-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.dark-neomorphic .message-field::-ms-input-placeholder{
+.dark-neomorphic .message-field::-ms-input-placeholder,
+.dark-neomorphic .bio-field::-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
@@ -1592,11 +1612,11 @@ div[class*="name-container"].dark-neomorphic{
 
 .image-upload-container{
   /* design */
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 
   /* display */
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
@@ -1613,8 +1633,8 @@ div[class*="name-container"].dark-neomorphic{
   outline-offset: 5px;
 
   /* size */
-  height: 500px;
-  width: 500px;
+  height: 100px;
+  width: 100px;
 
   /* display */
   display: block;
@@ -1629,8 +1649,8 @@ div[class*="name-container"].dark-neomorphic{
   border-radius: 20px;
 
   /* size */
-  height: 500px;
-  width: 500px;
+  height: 100px;
+  width: 100px;
 
   /* display */
   display: block;
@@ -1646,8 +1666,8 @@ div[class*="name-container"].dark-neomorphic{
   /* outline: 1px solid rebeccapurple; */
 
   /* size */
-  height: 500px;
-  width: 500px;
+  height: 100px;
+  width: 100px;
 
   /* display */
   display: block;

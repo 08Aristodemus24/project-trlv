@@ -23,13 +23,13 @@ export default function ImageInput({ children }){
     // all its states we use the state appropriate to the ImageInput
     // component and its setter to set from this component the state of
     // the form
-    let { image, setImage } = useContext(FormInputsContext);
-    let [imageObj, setImageObj] = useState(null);
-    let src = imageObj != null ? imageObj.length != 0 ? URL.createObjectURL(imageObj[0]) : null : null;
+    let { profileImage, setProfileImage } = useContext(FormInputsContext);
+    let [profileImageObj, setProfileImageObj] = useState(null);
+    let src = profileImageObj != null ? profileImageObj.length != 0 ? URL.createObjectURL(profileImageObj[0]) : null : null;
 
     const handleUpload = (event) => {
-        setImageObj(event.target.files);
-        setImage(event.target.files[0]);
+        setProfileImageObj(event.target.files);
+        setProfileImage(event.target.files[0]);
         console.log('image uploaded');
     }
 
@@ -49,7 +49,7 @@ export default function ImageInput({ children }){
             a list of length 0 */}
             <img className={`uploaded-image ${design}`} src={src} alt=" "/>
             <div className="image-upload-field-wrapper">
-                <label htmlFor="image-upload" className="image-upload-label">Image</label>    
+                <label htmlFor="image-upload" className="image-upload-label">Profile Image</label>    
                 <input 
                     type="file" 
                     accept="image/*" 

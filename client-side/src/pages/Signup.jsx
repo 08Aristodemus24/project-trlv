@@ -1,3 +1,10 @@
-export default function Signup({ children }){
-    return <h1>Signup</h1>
+import Section from '../components/Section';
+import Form from '../components/Form';  
+
+export default function Signup(){
+    return (
+        <Section section-name={"data-form"}>
+            <Form mode="signup"/>
+        </Section>
+    )
 }

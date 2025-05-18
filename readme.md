@@ -164,3 +164,5 @@ fetch("http://localhost:8000/api/some-protected-view/", {
     })
 })
 ```
+
+* `AbstractUser` is a full User model, complete with fields, as an abstract class so that you can inherit from it and add your own profile fields and methods. `AbstractBaseUser` only contains the authentication functionality, but no actual fields: you have to supply them when you subclass.

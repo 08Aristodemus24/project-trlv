@@ -3,7 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { DesignsContext } from "../contexts/DesignsContext";
 import { FormInputsContext } from "../contexts/FormInputsContext";
 
-export default function Message({ children }){
+export default function Bio({ children }){
     // initialize and define theme of component by using
     // context
     let style;
@@ -20,28 +20,28 @@ export default function Message({ children }){
     }
 
     // based on the context provider of wrapped Form containing
-    // all its states we use the state appropriate to the MessageInput
+    // all its states we use the state appropriate to the BioInput
     // component and its setter to set from this component the state of
     // the form
-    let { message, setMessage } = useContext(FormInputsContext);
+    let { bio, setBio } = useContext(FormInputsContext);
 
     return (
         <div 
-            className={`message-container ${design}`}
+            className={`bio-container ${design}`}
             style={style}
         >
             <label 
-                htmlFor="message" 
-                className="message-label"
-            >Message</label>
+                htmlFor="bio" 
+                className="bio-label"
+            >Bio</label>
             <textarea 
-                id="message" 
+                id="bio" 
                 rows="5" 
-                name="message" 
-                className={`message-field ${design}`} 
-                placeholder="Your message here" 
-                onChange={(event) => setMessage(event.target.value)} 
-                value={message}
+                name="bio" 
+                className={`bio-field ${design}`} 
+                placeholder="Your bio here" 
+                onChange={(event) => setBio(event.target.value)} 
+                value={bio}
                 required
             />
         </div>

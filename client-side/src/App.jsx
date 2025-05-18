@@ -2,6 +2,7 @@ import { ThemeContext } from './contexts/ThemeContext';
 import { DesignsProvider } from './contexts/DesignsContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import './globals.css'
 import './App.css';
 import './navbar-862-and-up.css';
 import './navbar-862-down.css';
