@@ -13,10 +13,9 @@ export default function CountryCodeInput({ children }){
     
     // sometimes themes context will contain only the design 
     // and not the theme key so check if theme key is in themes
+    style = designs[design];
     if('theme' in themes){
         style = designs[design][theme];
-    }else{
-        style = designs[design];
     }
 
     // based on the context provider of wrapped Form containing

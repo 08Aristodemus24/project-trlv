@@ -1,5 +1,5 @@
 import NameInput from "./NameInput";
-import EmailInput from './EmailInput';
+import CredentialInput from "./CredentialInput";
 import MobileNumberInput from './MobileNumberInput';
 import CountryCodeInput from './CountryCodeInput';
 import MemberRoleInput from './MemberRoleInput';
@@ -13,18 +13,22 @@ import { DesignsContext } from "../contexts/DesignsContext";
 import { FormInputsContext } from "../contexts/FormInputsContext";
 import api from "../api";
 
+
+
 export default function Form({ children, mode }){
 
     // console.log(mode)
     let [fname, setFname] = useState("");
     let [lname, setLname] = useState("");
-    let [uname, setUname] = useState("");
-    let [email, setEmail] = useState("");
     let [mobileNum, setMobileNum] = useState("");
     let [countryCode, setCountryCode] = useState("");
     let [memberRole, setMemberRole] = useState("");
     let [bio, setBio] = useState("");
     let [profileImage, setProfileImage] = useState(null);
+
+    let [email, setEmail] = useState("");
+    let [uname, setUname] = useState("");
+    let [password, setPassword] = useState("");
 
     let style;
     const designs = useContext(DesignsContext);
@@ -33,52 +37,60 @@ export default function Form({ children, mode }){
     
     // sometimes themes context will contain only the design 
     // and not the theme key so check if theme key is in themes
+    style = designs[design];
     if('theme' in themes){
         style = designs[design][theme];
-    }else{
-        style = designs[design];
     }
-    
 
     // send a post request and retrieve the response and set 
     // the state of the following states for the alert component
     let [response, setResponse] = useState(null);
-    let [msgStatus, setMsgStatus] = useState();
+    let [msgStatus, setMsgStatus] = useState(undefined);
     let [errorType, setErrorType] = useState(null);
 
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
             const form_data = new FormData();
-            form_data.append('first_name', fname);
-            form_data.append('last_name', lname);
+
+            if(mode == "signup"){
+                form_data.append('email_address', email);
+                form_data.append('first_name', fname);
+                form_data.append('last_name', lname);
+                form_data.append('mobile_num', countryCode);
+                form_data.append('country_code', mobileNum);
+                form_data.append('member_role', memberRole);
+                form_data.append('bio', bio)
+                form_data.append('profile_image', profileImage)
+            }
+            
+            
             form_data.append('user_name', uname);
-            form_data.append('email_address', email);
-            form_data.append('country_code', mobileNum);
-            form_data.append('mobile_num', countryCode);
-            form_data.append('member_role', memberRole);
-            form_data.append('bio', bio)
-            form_data.append('profile_image', profileImage)
-            console.log(fname, lname, email, mobileNum, countryCode, memberRole)
+            form_data.append('password', password);
+            
+
+            console.log(uname, password, email, fname, lname, mobileNum, countryCode, memberRole)
 
             // once data is validated submitted and then extracted
             // reset form components form element
             setFname("");
             setLname("");
-            setUname("");
-            setEmail("");
             setMobileNum("");
             setCountryCode("+63");
             setMemberRole("Elder");
             setBio("");
             setProfileImage(null);
 
+            setEmail("");
+            setUname("");
+            setPassword("");
+
             // send here the data from the contact component to 
             // the backend proxy server. Note this is for development
             // const resp = await api.post("/api/signup", form_data);
             // setResponse(resp);
             
-            const url = 'http://127.0.0.1:8000/api/signup';
+            const url = `http://127.0.0.1:8000/api/${mode}`;
             // for production
             // const url = 'https://project-alexander.vercel.app/send-data';
 
@@ -107,6 +119,30 @@ export default function Form({ children, mode }){
         }
     };
 
+    const formInputs = () => {
+        let loginInputs = [
+            <NameInput name-type="user"/>,
+            <CredentialInput cred-type="password"/>
+        ]
+
+        if(mode == "signup"){
+            // if mode is signup add extra input fields to the variable
+            // storing the typical fields for login and signup
+            loginInputs.push(
+                <CredentialInput cred-type="email"/>,
+                <NameInput name-type="first"/>,
+                <NameInput name-type="last"/>,
+                <MobileNumberInput/>,
+                <CountryCodeInput/>,
+                <MemberRoleInput/>,
+                <BioInput/>,
+                <ImageInput/>
+            )
+        }
+
+        return loginInputs;
+    }
+
     // console.log(`response: ${response}`);
     // console.log(`message status: ${msgStatus}`);
     // console.log(`error type: ${errorType}`);
@@ -114,14 +150,17 @@ export default function Form({ children, mode }){
     return (
         <FormInputsContext.Provider value={{
             fname, setFname, 
-            lname, setLname, 
-            uname, setUname,
-            email, setEmail, 
+            lname, setLname,  
             mobileNum, setMobileNum, 
             countryCode, setCountryCode,
             memberRole, setMemberRole,
             bio, setBio,
             profileImage, setProfileImage,
+
+            email, setEmail,
+            uname, setUname,
+            password, setPassword,
+            
             handleSubmit,
         }}>
             <div className="form-container">
@@ -130,15 +169,7 @@ export default function Form({ children, mode }){
                     style={style}
                     method="POST"
                 >
-                    <NameInput name-type="first"/>
-                    <NameInput name-type="last"/>
-                    <NameInput name-type="user"/>
-                    <EmailInput/>
-                    <MobileNumberInput/>
-                    <CountryCodeInput/>
-                    <MemberRoleInput/>
-                    <BioInput/>
-                    <ImageInput/>
+                    {formInputs()}
                     <Button/>
                 </form>
                 <div className={`alert ${msgStatus !== undefined ? 'show' : ''}`} onClick={(event) => {

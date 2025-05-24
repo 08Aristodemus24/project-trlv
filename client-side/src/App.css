@@ -246,7 +246,7 @@ div[class*="name-container"].dark-neomorphic{
   color: var(--tertiary-color);                
 }
 
-.sharp-minimal .email-label{
+.sharp-minimal .credential-input-label{
   /* design */
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
@@ -260,7 +260,7 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.sharp-minimal .email-field{
+.sharp-minimal .credential-input-field{
   /* design */
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
@@ -280,22 +280,22 @@ div[class*="name-container"].dark-neomorphic{
 }
 
 /* Chrome, Firefox, Opera, Safari 10.1+ */
-.email-field::placeholder{
+.credential-input-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1; /* Firefox */
 }
 
 /* Internet Explorer 10-11 */
-.email-field:-ms-input-placeholder{
+.credential-input-field:-ms-input-placeholder{
   color: var(--tertiary-color);
 }
 
 /* Microsoft Edge */
-.email-field::-ms-input-placeholder{
+.credential-input-field::-ms-input-placeholder{
   color: var(--tertiary-color);
 }
 
-.light-neomorphic.email-container{
+.light-neomorphic.credential-input-container{
   /* design */
   background-color: var(--secondary-color);
 
@@ -303,7 +303,7 @@ div[class*="name-container"].dark-neomorphic{
   padding: 1em;
 }
 
-.light-neomorphic .email-label{
+.light-neomorphic .credential-input-label{
   /* design */
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -319,7 +319,7 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.light-neomorphic .email-field{
+.light-neomorphic .credential-input-field{
   /* design */
   color: var(--primary-color);
   background-color: var(--secondary-color);
@@ -341,16 +341,16 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.light-neomorphic .email-field::placeholder{
+.light-neomorphic .credential-input-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1;            
 }
 
-.light-neomorphic .email-field:-ms-input-placeholder{
+.light-neomorphic .credential-input-field:-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.light-neomorphic .email-field::-ms-input-placeholder{
+.light-neomorphic .credential-input-field::-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
@@ -362,7 +362,7 @@ div[class*="name-container"].dark-neomorphic{
   padding: 1em;
 }
 
-.dark-neomorphic .email-label{
+.dark-neomorphic .credential-input-label{
   /* design */
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
@@ -378,7 +378,7 @@ div[class*="name-container"].dark-neomorphic{
   display: block;
 }
 
-.dark-neomorphic .email-field{
+.dark-neomorphic .credential-input-field{
   /* design */
   color: var(--primary-color);
   background-color: var(--secondary-color);
@@ -403,16 +403,16 @@ div[class*="name-container"].dark-neomorphic{
   resize: none;
 }
 
-.dark-neomorphic .email-field::placeholder{
+.dark-neomorphic .credential-input-field::placeholder{
   color: var(--tertiary-color);
   opacity: 1;            
 }
 
-.dark-neomorphic .email-field:-ms-input-placeholder{
+.dark-neomorphic .credential-input-field:-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
-.dark-neomorphic .email-field::-ms-input-placeholder{
+.dark-neomorphic .credential-input-field::-ms-input-placeholder{
   color: var(--tertiary-color);                
 }
 
