@@ -9,8 +9,27 @@ class TRLVUserManager(BaseUserManager):
     """
     def create_user(self, username_field, member_role, password=None, **other_fields):
         """
-        Create and save a user with the given email and password.
+        Create and save a user with the given email and password. The ff.
+        below is the username_field, member_role, password (when not yet
+        encrypted), and the other fields
+
+        BladeRunne
+        Elder
+        somepass
+        {
+            'email': 'MichaelAveuc571@gmail.com', 
+            'first_name': 'Larry Miguel', 
+            'last_name': 'Cueva', 
+            'mobile_no': '(+63) 09707451021', 
+            'bio': 'jflkasfdjd;ls', 
+            'profile_img': None
+        }
+        print(username_field)
+        print(member_role)
+        print(password)
+        print(other_fields)
         """
+        
         if not email:
             raise ValueError(_("The Email must be set"))
         email = self.normalize_email(email)
@@ -23,7 +42,10 @@ class TRLVUserManager(BaseUserManager):
             **other_fields)
         
         # don't pass password during instantiation but do so
-        # when using the setter function for password
+        # when using the setter function for password, because 
+        # if we just set password field to password, the 
+        # password is not hashed and encrypted, as a result it 
+        # will just be a plain string vulnerable to attack
         user.set_password(password)
 
         # save the user to database

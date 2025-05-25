@@ -166,3 +166,5 @@ fetch("http://localhost:8000/api/some-protected-view/", {
 ```
 
 * `AbstractUser` is a full User model, complete with fields, as an abstract class so that you can inherit from it and add your own profile fields and methods. `AbstractBaseUser` only contains the authentication functionality, but no actual fields: you have to supply them when you subclass.
+
+* if you want to modify User class again even when python manage.py makemigrations and python manage.py migrate have been run we can delete the migrations and the db.sqlite3 files in the <app> folder and the root directory respectively

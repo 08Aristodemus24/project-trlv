@@ -23,9 +23,14 @@ export default function CredentialInput({ children, "cred-type": cred_type }){
     // all its states we use the state appropriate to the EmailInput
     // component and its setter to set from this component the state of
     // the form
-    let { "password": credential, "setPassword": setCredential } = useContext(FormInputsContext);
-    if(cred_type == "email"){
-        let { "email": credential, "setEmail": setCredential } = useContext(FormInputsContext);
+    let credential, setCredential;
+    let { password, setPassword } = useContext(FormInputsContext);
+    credential = password, setCredential = setPassword;
+    if(cred_type === "email"){
+        // if credential type is email then assign credential
+        // and setCredential vars to the state and setter
+        let { email, setEmail } = useContext(FormInputsContext);
+        credential = email, setCredential = setEmail;
     }
 
     return (

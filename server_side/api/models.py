@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User, AbstractUser , PermissionsMixin
 from .managers import TRLVUserManager
-
+ 
 # Create your models here.
 class TRLVUser(AbstractUser):
     """
@@ -22,7 +22,7 @@ class TRLVUser(AbstractUser):
     <django.db.models.fields.BooleanField: is_staff>, 
     <django.db.models.fields.BooleanField: is_active>, 
     <django.db.models.fields.DateTimeField: date_joined>, 
-    <django.db.models.fields.related.ManyToManyField: groups>, 
+    <django.db.models.fields.related.ManyToManyField: groups>, `
     <django.db.models.fields.related.ManyToManyField: user_permissions>
 
     since we have an extra field called member role we would have to create
@@ -30,8 +30,10 @@ class TRLVUser(AbstractUser):
     """
 
     # new fields for a user will be a member role and profile image
+    mobile_no = models.CharField(verbose_name="Mobile Number", null=True, max_length=100, )
     member_role = models.CharField(verbose_name="Member Role", default="Elder", max_length=50)
-    profile_img = models.ImageField(verbose_name="Profile Image", width_field=100, height_field=100, )
+    bio = models.CharField(verbose_name="Bio", null=True, max_length=500)
+    profile_img = models.ImageField(verbose_name="Profile Image", width_field=None, height_field=None, null=True)
     
     REQUIRED_FIELDS = ["member_role"]
 

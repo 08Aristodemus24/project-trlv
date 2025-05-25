@@ -57,8 +57,8 @@ export default function Form({ children, mode }){
                 form_data.append('email_address', email);
                 form_data.append('first_name', fname);
                 form_data.append('last_name', lname);
-                form_data.append('mobile_num', countryCode);
-                form_data.append('country_code', mobileNum);
+                form_data.append('mobile_num', mobileNum);
+                form_data.append('country_code', countryCode);
                 form_data.append('member_role', memberRole);
                 form_data.append('bio', bio)
                 form_data.append('profile_image', profileImage)
@@ -100,17 +100,17 @@ export default function Form({ children, mode }){
             });
             setResponse(resp);
 
-            // // if response.status is 200 then that means contact information
-            // // has been successfully sent to the email.js api
+            // if response.status is 200 then that means contact information
+            // has been successfully sent to the email.js api
             
-            // if(resp.status === 200){
-            //     setMsgStatus("success");
-            //     console.log(`message has been sent with code ${resp.status}`);
+            if(resp.status === 200){
+                setMsgStatus("success");
+                console.log(`message has been sent with code ${resp.status}`);
 
-            // }else{
-            //     setMsgStatus("failure");
-            //     console.log(`message submission unsucessful. Response status '${resp.status}' occured`);
-            // }
+            }else{
+                setMsgStatus("failure");
+                console.log(`message submission unsucessful. Response status '${resp.status}' occured`);
+            }
 
         }catch(error){
             setMsgStatus("denied");

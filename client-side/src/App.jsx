@@ -17,7 +17,7 @@ function App(){
 
   return (
     <DesignsProvider>
-      <ThemeContext.Provider value={{design: "sharp-minimal", theme: 'light'}}>
+      <ThemeContext.Provider value={{design: "sharp-minimal", theme: "light"}}>
         <Router>
           <Navbar/>
           <Routes>
