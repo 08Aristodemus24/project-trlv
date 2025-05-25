@@ -8,7 +8,7 @@ export default function NameInput({ 'name-type': name_type, children }){
     // This is to reduce redundancy of using virtually the
     // same component but different in name code like first 
     // and last name. 
-    let name_code = name_type === 'user' ? 'u' : name_type === 'first' ? 'l' : 'f';
+    let name_code = name_type === 'user' ? 'u' : name_type === 'first' ? 'f' : 'l';
     let placeholder = name_type === 'user' ? 'CookieMonster1056' : name_type === 'first' ? 'John Smith' : 'Meyer';
     const capitalize = (string) => string[0].toUpperCase() + string.substring(1);
 

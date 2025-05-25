@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Footer from './components/Footer';
 
 
 function App(){
@@ -31,6 +32,7 @@ function App(){
               <Signup/>
             }/>
           </Routes>
+          <Footer/>
         </Router>
       </ThemeContext.Provider>
     </DesignsProvider> 

@@ -35,18 +35,18 @@ export default function CredentialInput({ children, "cred-type": cred_type }){
 
     return (
         <div 
-            className={`credential-container ${design}`} 
+            className={`${cred_type}-credential-container ${design}`} 
             style={style}
         >
             <label 
                 htmlFor={`${cred_type}-credential-input`}
-                className="credential-input-label"
+                className={`${cred_type}-credential-input-label`}
             >{cred_type.charAt(0).toUpperCase() + cred_type.slice(1)}</label>
             <input 
                 type={`${cred_type}`}
                 name={`${cred_type}_credential_name`}
                 id={`${cred_type}-credential-input`}
-                className={`credential-input-field ${design}`} 
+                className={`${cred_type}-credential-input-field ${design}`} 
                 value={credential}
                 onChange={(event) => setCredential(event.target.value)}
                 placeholder={cred_type == "email" ? "johnmeyer87@gmail.com" : "xxxxxx"}
