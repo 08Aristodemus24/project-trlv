@@ -3,7 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { DesignsContext } from "../contexts/DesignsContext";
 import { FormInputsContext } from "../contexts/FormInputsContext";
 
-export default function Button({ children }){
+export default function Button({ children, mode }){
     // initialize and define theme of component by using
     // context
     let style;
@@ -42,7 +42,7 @@ export default function Button({ children }){
                 onMouseUp={toggle} 
                 onClick={handleSubmit}
             >
-                Submit
+                {mode === "signup" ? "Sign Up" : "Login"}
             </button>
         </div>
     );

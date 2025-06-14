@@ -25,7 +25,7 @@ export default function ImageInput({ children }){
     // the form
     let { profileImage, setProfileImage } = useContext(FormInputsContext);
     let [profileImageObj, setProfileImageObj] = useState(null);
-    let src = profileImageObj != null ? profileImageObj.length != 0 ? URL.createObjectURL(profileImageObj[0]) : null : null;
+    let src = profileImageObj !== null ? profileImageObj.length !== 0 ? URL.createObjectURL(profileImageObj[0]) : null : null;
 
     const handleUpload = (event) => {
         setProfileImageObj(event.target.files);

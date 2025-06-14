@@ -12,6 +12,7 @@ def signup(request):
     creates a new user with given credentials and other
     information
     """
+
     # Larry Miguel
     # Cueva
     # BladeRunne
@@ -32,9 +33,10 @@ def signup(request):
     # for key in request.FILES.keys():
     #     print(f"key {key}: {request.FILES.get(key)}")
 
+    # this must be the payload format
     data = {
         # fields string below must not be empty
-        "username": request.data.get("user_name") or None,
+        "username": request.data.get("username") or None,
         "password": request.data.get("password") or None,
         "email": request.data.get("email_address") or None,
 

@@ -65,7 +65,7 @@ export default function Form({ children, mode }){
             }
             
             
-            form_data.append('user_name', uname);
+            form_data.append('username', uname);
             form_data.append('password', password);
             
 
@@ -107,6 +107,12 @@ export default function Form({ children, mode }){
                 setMsgStatus("success");
                 console.log(`message has been sent with code ${resp.status}`);
 
+                // if user is in login mode response will contain
+                // the access and refresh token we need
+                if(mode === "login"){
+                    const tokens = await resp.json();
+                    console.log(tokens);
+                }
             }else{
                 setMsgStatus("failure");
                 console.log(`message submission unsucessful. Response status '${resp.status}' occured`);
@@ -146,6 +152,7 @@ export default function Form({ children, mode }){
     // console.log(`response: ${response}`);
     // console.log(`message status: ${msgStatus}`);
     // console.log(`error type: ${errorType}`);
+    console.log()
 
     return (
         <FormInputsContext.Provider value={{
@@ -165,12 +172,12 @@ export default function Form({ children, mode }){
         }}>
             <div className="form-container">
                 <form
-                    className={`form ${design}`}
+                    className={`form ${design} ${mode == "signup" ? "signup" : "login"}`}
                     style={style}
                     method="POST"
                 >
                     {formInputs()}
-                    <Button/>
+                    <Button mode={mode}/>
                 </form>
                 <div className={`alert ${msgStatus !== undefined ? 'show' : ''}`} onClick={(event) => {
                     // remove class from alert container to hide it again
