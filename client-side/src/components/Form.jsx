@@ -11,7 +11,8 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { DesignsContext } from "../contexts/DesignsContext";
 import { FormInputsContext } from "../contexts/FormInputsContext";
-import api from "../api";
+
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
 
 
@@ -111,6 +112,15 @@ export default function Form({ children, mode }){
                 // the access and refresh token we need
                 if(mode === "login"){
                     const tokens = await resp.json();
+
+                    // note that ACCESS_TOKEN and REFRESH_TOKEN are just 
+                    // variables that contain the key strings "access" and 
+                    // "refresh"
+                    localStorage.setItem(ACCESS_TOKEN, tokens.access);
+                    localStorage.setItem(REFRESH_TOKEN, tokens.refresh);
+
+                    // redirect to 
+                    
                     console.log(tokens);
                 }
             }else{

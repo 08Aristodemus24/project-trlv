@@ -43,7 +43,7 @@ export default function Navbar(){
   // but what if user opens modal and sets the dims to desktop
   // then when a tag is clicked modal will be closed
   const close_and_go = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if(isOpened === true){
       setIsOpened(!isOpened);
       body.style.overflow = "auto";
@@ -73,16 +73,16 @@ export default function Navbar(){
           
           <div className="nav-menu-container">
             <div className="nav-menu">
-              <a className="nav-item about-section" aria-current="page" onClick={close_and_go}>About</a>
-              <a className="nav-item store-section" onClick={close_and_go}>Store</a>
-              <a className="nav-item joinus-section" onClick={close_and_go}>Join Us</a>
-              <a className="nav-item faq-section" onClick={close_and_go}>FAQ</a>
-              <a className="nav-item contact-section" onClick={close_and_go}>Contact</a>
+              <NavLink className="nav-item about-section" aria-current="page" to="/about" onClick={close_and_go}>About</NavLink>
+              <NavLink className="nav-item store-section" to="/store" onClick={close_and_go}>Store</NavLink>
+              <NavLink className="nav-item joinus-section" to="/join-us" onClick={close_and_go}>Join Us</NavLink>
+              <NavLink className="nav-item faq-section" to="/faq" onClick={close_and_go}>FAQ</NavLink>
+              <NavLink className="nav-item contact-section" to="/contact" onClick={close_and_go}>Contact</NavLink>
             </div>
 
             <div className="nav-signup">
-              <NavLink className="signup-item login" to="/login" >Login</NavLink>
-              <NavLink className="signup-item signup" to="/signup">Sign Up</NavLink>
+              <NavLink className="signup-item login" to="/login" onClick={close_and_go}>Login</NavLink>
+              <NavLink className="signup-item signup" to="/signup" onClick={close_and_go}>Sign Up</NavLink>
             </div>
           </div>
         </nav>

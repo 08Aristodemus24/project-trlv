@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import { api } from "../api";
+import api from "../api";
 
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { useEffect, useState } from "react";
@@ -16,6 +16,10 @@ export default function ProtectedRoute({ children }){
     // has been set in our browser local storage through perhaps
     // a login component
     useEffect(() => {
+        // we call the asynchronous auth function
+        // however we don't call the .then() method
+        // when we chain it, we call catch() immediately
+        // instead
         auth().catch(() => setisAuthorized(true));
     }, []);
 
@@ -55,6 +59,7 @@ export default function ProtectedRoute({ children }){
         }
 
         const decoded = jwtDecode(token)
+        console.log(decoded)
         const tokenExpiration = decoded.exp
         const now = Date.now() / 1000
 

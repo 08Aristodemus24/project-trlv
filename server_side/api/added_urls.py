@@ -16,5 +16,6 @@ urlpatterns = [
     # authentication assuming the credentials we submit in our request
     # also exists as a user in our database, as a result of signing up
     # this will return a refresh and access token 
-    path('login', TokenObtainPairView.as_view(), name='login')
+    path('login', TokenObtainPairView.as_view(), name='login'),
+    path('token/refresh', TokenRefreshView.as_view(), name='refresh_token')
 ]
