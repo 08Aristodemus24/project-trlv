@@ -33,6 +33,8 @@ export default function ProtectedRoute({ children }){
                 refresh: refreshed_token
             });
 
+            console.log(`refreshed tokens ${response.data}`)
+
             // if the response is successful its status code will
             // be 200
             if(response.status === 200){
@@ -60,11 +62,17 @@ export default function ProtectedRoute({ children }){
 
         const decoded = jwtDecode(token)
         console.log(decoded)
+
+        // assign decoded access tokens timestamp of expiration
         const tokenExpiration = decoded.exp
         const now = Date.now() / 1000
 
         if(tokenExpiration < now){
-            // this fires if 
+            // while token still has time before it has expired
+            // we can send a request to refresh the access token
+            // we have. This is to handle cases like if user attempts
+            // to go to protected routes so that they don't have to keep
+            // logging in everytime they run into protected routes
             await refreshToken();
         }else{
             // a redundant function that still allows our session
