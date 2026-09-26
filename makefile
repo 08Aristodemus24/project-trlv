@@ -6,7 +6,7 @@ run-client:
 # make run-server mode=makemigrations
 # make run-server mode=migrate
 run-server:
-	python ./server_side/manage.py $(mode)
+	python ./server_side/manage.py $(mode) 
 
 update-reqs:
 	pip list --format=freeze > ./server_side/requirements.txt
